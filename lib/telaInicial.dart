@@ -6,7 +6,6 @@ import 'cadastro1.dart';
 import 'telaInicial.dart';
 import 'telaLogin.dart';
 import 'chamados.dart';
-import 'telaPerfil.dart';
 import 'telaChamados.dart';
 
 class TelaInicial extends StatefulWidget {
@@ -73,34 +72,6 @@ class _TelaInicialState extends State<TelaInicial> {
     );
   }
 
-  Widget buildMeuPerfilBtn() {
-    return GestureDetector(
-      child: Container(
-        padding: EdgeInsets.symmetric(vertical: 25),
-        width: double.infinity,
-        child: ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            elevation: 5,
-            padding: EdgeInsets.all(15),
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-            primary: Colors.yellow,
-            onPrimary: Colors.white,
-          ),
-          onPressed: () {
-            print('Meu perfil pressionado');
-            Navigator.of(context).pushReplacementNamed('/telaPerfil');
-          },
-          child: Text(
-            'Meu Perfil',
-            style: TextStyle(
-                color: Colors.black, fontSize: 18, fontWeight: FontWeight.bold),
-          ),
-        ),
-      ),
-    );
-  }
-
   Widget buildSairDaContaBtn() {
     return GestureDetector(
       child: Container(
@@ -159,8 +130,6 @@ class _TelaInicialState extends State<TelaInicial> {
                       buildAbrirChamadoBtn(),
                       SizedBox(height: 15),
                       buildVerificaChamadoBtn(),
-                      SizedBox(height: 15),
-                      buildMeuPerfilBtn(),
                       SizedBox(height: 100),
                       buildSairDaContaBtn(),
                     ],

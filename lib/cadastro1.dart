@@ -93,7 +93,7 @@ class _TelaCadastro1State extends State<TelaCadastro1> {
             decoration: InputDecoration(
                 border: InputBorder.none,
                 contentPadding: EdgeInsets.only(left: 20),
-                hintText: 'Ex: 451900-000',
+                hintText: 'Ex: 45190-000',
                 hintStyle: TextStyle(color: Colors.black38)),
           ),
         )
@@ -174,11 +174,17 @@ class _TelaCadastro1State extends State<TelaCadastro1> {
   Widget buildCadastrarBtn() {
     return GestureDetector(
       child: Container(
-        // Restante do código...
+        padding: EdgeInsets.symmetric(vertical: 10),
+        width: double.infinity,
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
-              // Restante do código...
-              ),
+            elevation: 5,
+            padding: EdgeInsets.all(15),
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+            primary: Color(0xcc1FF5BE),
+            onPrimary: Colors.white,
+          ),
           onPressed: _cadastrarPressed
               ? null
               : () {
@@ -192,8 +198,11 @@ class _TelaCadastro1State extends State<TelaCadastro1> {
                   _usuario?.senha = _senhaController.text;
                   _makeCadastroUsuario(_usuario!);
                 },
-          child: null,
-          // Restante do código...
+          child: Text(
+            'Cadastrar',
+            style: TextStyle(
+                color: Colors.black, fontSize: 18, fontWeight: FontWeight.bold),
+          ),
         ),
       ),
     );
@@ -209,7 +218,7 @@ class _TelaCadastro1State extends State<TelaCadastro1> {
       final response = await dio.post(url, data: _usuario);
 
       // Acesso aos dados retornados pela API
-      if (response.statusCode == 200) {
+      if (response.statusCode == 201) {
         Navigator.of(context).pushReplacementNamed('/cadastradoSucesso');
       } else {
         print('Erro durante a requisição: Algum erro com o servidor');
