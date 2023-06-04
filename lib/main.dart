@@ -7,7 +7,6 @@ import 'telaInicial.dart';
 import 'telaLogin.dart';
 import 'chamados.dart';
 import 'telaChamados.dart';
-import 'telaPerfil.dart';
 import './chamadoCriado.dart';
 
 void main() {
@@ -25,7 +24,6 @@ class MyApp extends StatelessWidget {
         '/cadastro1': (context) => TelaCadastro1(),
         '/chamados': (context) => TelaChamados(),
         '/telaChamados': (context) => ExecutarVerificar(),
-        '/telaPerfil': (context) => ExecutarPerfil(),
         '/chamadoCriado': (context) => ExecutarCriado(),
         '/cadastradoSucesso': (context) => CadastradoSucesso(),
       },

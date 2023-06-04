@@ -100,19 +100,6 @@ class _TelaLoginState extends State<TelaLogin> {
     );
   }
 
-  Widget buildEsqueceuSenhaBtn() {
-    return Container(
-      alignment: Alignment.centerRight,
-      child: TextButton(
-        onPressed: () => print("Esqueci a senha pressionada"),
-        child: Text(
-          'Esqueceu sua senha?',
-          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-        ),
-      ),
-    );
-  }
-
   Widget buildLembrarAsenha() {
     return Container(
       height: 20,
@@ -269,7 +256,7 @@ class _TelaLoginState extends State<TelaLogin> {
                       buildEmail(),
                       SizedBox(height: 20),
                       buildSenha(),
-                      buildEsqueceuSenhaBtn(),
+                      SizedBox(height: 20),
                       buildLembrarAsenha(),
                       SizedBox(height: 40),
                       buildLoginBtn(),
