@@ -12,13 +12,10 @@ class ExecutarVerificar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(children: [
-        Column(children: [
-          Positioned(child: Barra_do_app()),
-          Positioned(child: TelaChamado1())
-        ])
-      ]),
-    );
+        body: Stack(children: [
+      Positioned(child: Barra_do_app()),
+      Positioned(child: TelaChamado1())
+    ]));
   }
 }
 
@@ -124,7 +121,7 @@ class Chamado_Analise extends StatelessWidget {
   @override
   Widget build(BuildContext buildContext) {
     return Center(
-        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+        child: Stack(children: [
       //ESPAÇAMENTO ENTRE AS CAIXAS
       SizedBox(height: 20),
       //CRIANDO QUADRADO AZUL
@@ -174,9 +171,21 @@ class Chamado_Analise extends StatelessWidget {
                     //crossAxisAlignment para alinhar as classes dentro de uma coluna
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
-                      Rua(),
-                      Bairro(),
-                      Refe(),
+                      Text(logradouro,
+                       style: TextStyle(
+                                color: Colors.white,
+                            ),
+                          ),
+                      Text(bairro,
+                       style: TextStyle(
+                                color: Colors.white,
+                            ),
+                          ),
+                      Text(complemento,
+                       style: TextStyle(
+                                color: Colors.white,
+                            ),
+                          ),
                       SizedBox(
                         height: 15,
                       ),
@@ -191,7 +200,14 @@ class Chamado_Analise extends StatelessWidget {
                       //DATA ABAIXO DA LINHA
                       Column(
                           crossAxisAlignment: CrossAxisAlignment.end,
-                          children: [Text(dataAtualizacao)]),
+                          children: [
+                             Text(
+                              dataAtualizacao,
+                              style: TextStyle(
+                                color: Colors.white,
+                              ),
+                            ),
+                          ]),
                     ]),
               ),
             ),
@@ -249,7 +265,7 @@ class Chamado_Rejeitado extends StatelessWidget {
                     ),
                     child: Center(
                       child: Text(
-                        '4',
+                        '1',
                         style: TextStyle(fontSize: 24, color: Colors.white),
                       ),
                     ),
@@ -262,7 +278,7 @@ class Chamado_Rejeitado extends StatelessWidget {
                   right: 250,
                   child: Container(
                     child: Text(
-                      'FOTOS ENVIADAS',
+                      'FOTO ENVIADA',
                       style: TextStyle(
                         fontSize: 16,
                         color: Color.fromARGB(255, 232, 232, 232),
@@ -281,9 +297,21 @@ class Chamado_Rejeitado extends StatelessWidget {
                       //crossAxisAlignment para alinhar as classes dentro de uma coluna
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
-                        Text(logradouro),
-                        Text(bairro),
-                        Text(complemento),
+                        Text(logradouro,
+                       style: TextStyle(
+                                color: Colors.white,
+                            ),
+                          ),
+                        Text(bairro,
+                       style: TextStyle(
+                                color: Colors.white,
+                            ),
+                          ),
+                       Text(complemento,
+                       style: TextStyle(
+                                color: Colors.white,
+                            ),
+                          ),
                         SizedBox(height: 15),
                         //LINHA CINZA DEBAIXO DO TEXTO DA RUA
                         Container(
@@ -295,7 +323,11 @@ class Chamado_Rejeitado extends StatelessWidget {
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
-                            Text(dataAtualizacao),
+                            Text(dataAtualizacao,
+                       style: TextStyle(
+                                color: Colors.white,
+                            ),
+                          ),
                           ],
                         ),
                       ],
@@ -360,7 +392,7 @@ class Chamado_Atendido extends StatelessWidget {
                     ),
                     child: Center(
                       child: Text(
-                        '4',
+                        '1',
                         style: TextStyle(fontSize: 24, color: Colors.white),
                       ),
                     ),
@@ -373,7 +405,7 @@ class Chamado_Atendido extends StatelessWidget {
                   right: 250,
                   child: Container(
                     child: Text(
-                      'FOTOS ENVIADAS',
+                      'FOTO ENVIADA',
                       style: TextStyle(
                         fontSize: 16,
                         color: Color.fromARGB(255, 232, 232, 232),
@@ -392,9 +424,21 @@ class Chamado_Atendido extends StatelessWidget {
                       //crossAxisAlignment para alinhar as classes dentro de uma coluna
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
-                        Text(logradouro),
-                        Text(bairro),
-                        Text(complemento),
+                        Text(logradouro,
+                       style: TextStyle(
+                                color: Colors.white,
+                            ),
+                          ),
+                        Text(bairro,
+                       style: TextStyle(
+                                color: Colors.white,
+                            ),
+                          ),
+                        Text(complemento,
+                       style: TextStyle(
+                                color: Colors.white,
+                            ),
+                          ),
                         SizedBox(height: 15),
                         //LINHA CINZA DEBAIXO DO TEXTO DA RUA
                         Container(
@@ -406,7 +450,11 @@ class Chamado_Atendido extends StatelessWidget {
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
-                            Text(dataAtualizacao),
+                            Text(dataAtualizacao,
+                       style: TextStyle(
+                                color: Colors.white,
+                            ),
+                          ),
                           ],
                         ),
                       ],

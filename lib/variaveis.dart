@@ -1,54 +1,5 @@
 import 'package:flutter/material.dart';
 
-class Data extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      '13/04/2023',
-      style: TextStyle(fontSize: 16, color: Color.fromARGB(255, 186, 186, 186)),
-    );
-  }
-}
-
-class Hora extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      '21:47',
-      style: TextStyle(fontSize: 16, color: Color.fromARGB(255, 186, 186, 186)),
-    );
-  }
-}
-
-class Rua extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      'Rua. manoel pedro',
-      style: TextStyle(fontSize: 19, color: Color.fromARGB(255, 186, 186, 186)),
-      textDirection: TextDirection.rtl,
-    );
-  }
-}
-
-class Bairro extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Text('Bairro. Osório Pedro',
-        style:
-            TextStyle(fontSize: 19, color: Color.fromARGB(255, 186, 186, 186)));
-  }
-}
-
-class Refe extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Text('Ref.Mercado São José',
-        style:
-            TextStyle(fontSize: 19, color: Color.fromARGB(255, 186, 186, 186)));
-  }
-}
-
 class Status_Analise extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
