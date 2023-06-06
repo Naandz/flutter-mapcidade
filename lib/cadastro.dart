@@ -19,7 +19,8 @@ class _TelaCadastroState extends State<TelaCadastro> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _nomeController = TextEditingController();
   final TextEditingController _sobrenomeController = TextEditingController();
-  final TextEditingController _dataNascimentoController = TextEditingController();
+  final TextEditingController _dataNascimentoController =
+      TextEditingController();
 
   Widget buildEmail() {
     return Column(
@@ -28,30 +29,45 @@ class _TelaCadastroState extends State<TelaCadastro> {
         Text(
           'Email',
           style: TextStyle(
-              color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
+            color: Colors.white,
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+          ),
         ),
         SizedBox(height: 10),
         Container(
           alignment: Alignment.centerLeft,
-          decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(10),
-              boxShadow: [
-                BoxShadow(
-                    color: Colors.black26, blurRadius: 6, offset: Offset(0, 2))
-              ]),
           height: 60,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black26,
+                blurRadius: 1,
+                offset: Offset(0, 2),
+              ),
+            ],
+            gradient: LinearGradient(
+              colors: [
+                Color.fromARGB(132, 109, 109, 109),
+                Color.fromARGB(10, 0, 0, 0)
+              ],
+              begin: Alignment.centerLeft,
+              end: Alignment.centerRight,
+            ),
+          ),
           child: TextField(
             controller: _emailController,
             keyboardType: TextInputType.emailAddress,
-            style: TextStyle(color: Colors.black87),
+            style: TextStyle(color: Colors.white),
             decoration: InputDecoration(
-                border: InputBorder.none,
-                contentPadding: EdgeInsets.only(left: 20),
-                hintText: 'Ex: contato@gmail.com',
-                hintStyle: TextStyle(color: Colors.black38)),
+              border: InputBorder.none,
+              contentPadding: EdgeInsets.only(left: 20),
+              hintText: 'Ex: contato@gmail.com',
+              hintStyle: TextStyle(color: Colors.white),
+            ),
           ),
-        )
+        ),
       ],
     );
   }
@@ -63,30 +79,45 @@ class _TelaCadastroState extends State<TelaCadastro> {
         Text(
           'Nome',
           style: TextStyle(
-              color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
+            color: Colors.white,
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+          ),
         ),
         SizedBox(height: 10),
         Container(
           alignment: Alignment.centerLeft,
-          decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(10),
-              boxShadow: [
-                BoxShadow(
-                    color: Colors.black26, blurRadius: 6, offset: Offset(0, 2))
-              ]),
           height: 60,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black26,
+                blurRadius: 1,
+                offset: Offset(0, 2),
+              ),
+            ],
+            gradient: LinearGradient(
+              colors: [
+                Color.fromARGB(132, 109, 109, 109),
+                Color.fromARGB(10, 0, 0, 0)
+              ],
+              begin: Alignment.centerLeft,
+              end: Alignment.centerRight,
+            ),
+          ),
           child: TextField(
             controller: _nomeController,
             keyboardType: TextInputType.emailAddress,
-            style: TextStyle(color: Colors.black87),
+            style: TextStyle(color: Colors.white),
             decoration: InputDecoration(
-                border: InputBorder.none,
-                contentPadding: EdgeInsets.only(left: 20),
-                hintText: 'Ex: Ryan Pablo',
-                hintStyle: TextStyle(color: Colors.black38)),
+              border: InputBorder.none,
+              contentPadding: EdgeInsets.only(left: 20),
+              hintText: 'Ex: Ryan Pablo',
+              hintStyle: TextStyle(color: Colors.white),
+            ),
           ),
-        )
+        ),
       ],
     );
   }
@@ -98,30 +129,45 @@ class _TelaCadastroState extends State<TelaCadastro> {
         Text(
           'Sobrenome',
           style: TextStyle(
-              color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
+            color: Colors.white,
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+          ),
         ),
         SizedBox(height: 10),
         Container(
           alignment: Alignment.centerLeft,
-          decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(10),
-              boxShadow: [
-                BoxShadow(
-                    color: Colors.black26, blurRadius: 6, offset: Offset(0, 2))
-              ]),
           height: 60,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black26,
+                blurRadius: 1,
+                offset: Offset(0, 2),
+              ),
+            ],
+            gradient: LinearGradient(
+              colors: [
+                Color.fromARGB(132, 109, 109, 109),
+                Color.fromARGB(10, 0, 0, 0)
+              ],
+              begin: Alignment.centerLeft,
+              end: Alignment.centerRight,
+            ),
+          ),
           child: TextField(
             controller: _sobrenomeController,
             keyboardType: TextInputType.emailAddress,
-            style: TextStyle(color: Colors.black87),
+            style: TextStyle(color: Colors.white),
             decoration: InputDecoration(
-                border: InputBorder.none,
-                contentPadding: EdgeInsets.only(left: 20),
-                hintText: 'Ex: Silva Araujo',
-                hintStyle: TextStyle(color: Colors.black38)),
+              border: InputBorder.none,
+              contentPadding: EdgeInsets.only(left: 20),
+              hintText: 'Ex: Silva Araujo',
+              hintStyle: TextStyle(color: Colors.white),
+            ),
           ),
-        )
+        ),
       ],
     );
   }
@@ -133,30 +179,45 @@ class _TelaCadastroState extends State<TelaCadastro> {
         Text(
           'Data de Nascimento',
           style: TextStyle(
-              color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
+            color: Colors.white,
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+          ),
         ),
         SizedBox(height: 10),
         Container(
           alignment: Alignment.centerLeft,
-          decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(10),
-              boxShadow: [
-                BoxShadow(
-                    color: Colors.black26, blurRadius: 6, offset: Offset(0, 2))
-              ]),
           height: 60,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black26,
+                blurRadius: 1,
+                offset: Offset(0, 2),
+              ),
+            ],
+            gradient: LinearGradient(
+              colors: [
+                Color.fromARGB(132, 109, 109, 109),
+                Color.fromARGB(10, 0, 0, 0)
+              ],
+              begin: Alignment.centerLeft,
+              end: Alignment.centerRight,
+            ),
+          ),
           child: TextField(
             controller: _dataNascimentoController,
             keyboardType: TextInputType.emailAddress,
-            style: TextStyle(color: Colors.black87),
+            style: TextStyle(color: Colors.white),
             decoration: InputDecoration(
-                border: InputBorder.none,
-                contentPadding: EdgeInsets.only(left: 20),
-                hintText: 'Ex: 01/01/2000',
-                hintStyle: TextStyle(color: Colors.black38)),
+              border: InputBorder.none,
+              contentPadding: EdgeInsets.only(left: 20),
+              hintText: 'Ex: 01/01/2000',
+              hintStyle: TextStyle(color: Colors.white),
+            ),
           ),
-        )
+        ),
       ],
     );
   }
@@ -181,7 +242,7 @@ class _TelaCadastroState extends State<TelaCadastro> {
                 sobrenome: _sobrenomeController.text,
                 email: _emailController.text,
                 dataNascimento: _dataNascimentoController.text);
-                Navigator.pushNamed(context, '/cadastro1', arguments: dados);
+            Navigator.pushNamed(context, '/cadastro1', arguments: dados);
           },
           child: Text(
             'Prosseguir',
@@ -205,15 +266,17 @@ class _TelaCadastroState extends State<TelaCadastro> {
                 height: double.infinity,
                 width: double.infinity,
                 decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomCenter,
-                        colors: [
-                      Color(0x66544c46),
-                      Color(0x99544c46),
-                      Color(0xcc544c46),
-                      Color(0xff544c46),
-                    ])),
+                  gradient: LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                      Color.fromARGB(255, 32, 32, 32),
+                      Color.fromARGB(255, 32, 32, 32),
+                      Color.fromARGB(255, 32, 32, 32),
+                      Color.fromARGB(255, 32, 32, 32),
+                    ],
+                  ),
+                ),
                 child: SingleChildScrollView(
                   physics: AlwaysScrollableScrollPhysics(),
                   padding: EdgeInsets.symmetric(horizontal: 25, vertical: 120),
@@ -223,9 +286,10 @@ class _TelaCadastroState extends State<TelaCadastro> {
                       Text(
                         'Cadastre-se!',
                         style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 40,
-                            fontWeight: FontWeight.bold),
+                          color: Colors.white,
+                          fontSize: 40,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                       SizedBox(height: 25),
                       buildEmail(),
@@ -240,7 +304,7 @@ class _TelaCadastroState extends State<TelaCadastro> {
                     ],
                   ),
                 ),
-              )
+              ),
             ],
           ),
         ),

@@ -38,30 +38,45 @@ class _TelaCadastro1State extends State<TelaCadastro1> {
         Text(
           'CPF',
           style: TextStyle(
-              color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
+            color: Colors.white,
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+          ),
         ),
         SizedBox(height: 10),
         Container(
           alignment: Alignment.centerLeft,
-          decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(10),
-              boxShadow: [
-                BoxShadow(
-                    color: Colors.black26, blurRadius: 6, offset: Offset(0, 2))
-              ]),
           height: 60,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black26,
+                blurRadius: 1,
+                offset: Offset(0, 2),
+              ),
+            ],
+            gradient: LinearGradient(
+              colors: [
+                Color.fromARGB(132, 109, 109, 109),
+                Color.fromARGB(10, 0, 0, 0)
+              ],
+              begin: Alignment.centerLeft,
+              end: Alignment.centerRight,
+            ),
+          ),
           child: TextField(
             controller: _cpfController,
             keyboardType: TextInputType.emailAddress,
-            style: TextStyle(color: Colors.black87),
+            style: TextStyle(color: Colors.white),
             decoration: InputDecoration(
-                border: InputBorder.none,
-                contentPadding: EdgeInsets.only(left: 20),
-                hintText: 'Ex: 000.000.00-00',
-                hintStyle: TextStyle(color: Colors.black38)),
+              border: InputBorder.none,
+              contentPadding: EdgeInsets.only(left: 20),
+              hintText: 'Ex: 000.000.00-00',
+              hintStyle: TextStyle(color: Colors.white),
+            ),
           ),
-        )
+        ),
       ],
     );
   }
@@ -73,30 +88,45 @@ class _TelaCadastro1State extends State<TelaCadastro1> {
         Text(
           'CEP',
           style: TextStyle(
-              color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
+            color: Colors.white,
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+          ),
         ),
         SizedBox(height: 10),
         Container(
           alignment: Alignment.centerLeft,
-          decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(10),
-              boxShadow: [
-                BoxShadow(
-                    color: Colors.black26, blurRadius: 6, offset: Offset(0, 2))
-              ]),
           height: 60,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black26,
+                blurRadius: 1,
+                offset: Offset(0, 2),
+              ),
+            ],
+            gradient: LinearGradient(
+              colors: [
+                Color.fromARGB(132, 109, 109, 109),
+                Color.fromARGB(10, 0, 0, 0)
+              ],
+              begin: Alignment.centerLeft,
+              end: Alignment.centerRight,
+            ),
+          ),
           child: TextField(
             controller: _cepController,
             keyboardType: TextInputType.emailAddress,
-            style: TextStyle(color: Colors.black87),
+            style: TextStyle(color: Colors.white),
             decoration: InputDecoration(
-                border: InputBorder.none,
-                contentPadding: EdgeInsets.only(left: 20),
-                hintText: 'Ex: 45190-000',
-                hintStyle: TextStyle(color: Colors.black38)),
+              border: InputBorder.none,
+              contentPadding: EdgeInsets.only(left: 20),
+              hintText: 'Ex: 45190-000',
+              hintStyle: TextStyle(color: Colors.white),
+            ),
           ),
-        )
+        ),
       ],
     );
   }
@@ -108,30 +138,45 @@ class _TelaCadastro1State extends State<TelaCadastro1> {
         Text(
           'Senha',
           style: TextStyle(
-              color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
+            color: Colors.white,
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+          ),
         ),
         SizedBox(height: 10),
         Container(
           alignment: Alignment.centerLeft,
-          decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(10),
-              boxShadow: [
-                BoxShadow(
-                    color: Colors.black26, blurRadius: 6, offset: Offset(0, 2))
-              ]),
           height: 60,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black26,
+                blurRadius: 1,
+                offset: Offset(0, 2),
+              ),
+            ],
+            gradient: LinearGradient(
+              colors: [
+                Color.fromARGB(132, 109, 109, 109),
+                Color.fromARGB(10, 0, 0, 0)
+              ],
+              begin: Alignment.centerLeft,
+              end: Alignment.centerRight,
+            ),
+          ),
           child: TextField(
             controller: _senhaController,
             obscureText: true,
-            style: TextStyle(color: Colors.black87),
+            style: TextStyle(color: Colors.white),
             decoration: InputDecoration(
-                border: InputBorder.none,
-                contentPadding: EdgeInsets.only(left: 20),
-                hintText: '********',
-                hintStyle: TextStyle(color: Colors.black38)),
+              border: InputBorder.none,
+              contentPadding: EdgeInsets.only(left: 20),
+              hintText: '********',
+              hintStyle: TextStyle(color: Colors.white),
+            ),
           ),
-        )
+        ),
       ],
     );
   }
@@ -143,30 +188,45 @@ class _TelaCadastro1State extends State<TelaCadastro1> {
         Text(
           'Senha Novamente',
           style: TextStyle(
-              color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
+            color: Colors.white,
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+          ),
         ),
         SizedBox(height: 10),
         Container(
           alignment: Alignment.centerLeft,
-          decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(10),
-              boxShadow: [
-                BoxShadow(
-                    color: Colors.black26, blurRadius: 6, offset: Offset(0, 2))
-              ]),
           height: 60,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black26,
+                blurRadius: 1,
+                offset: Offset(0, 2),
+              ),
+            ],
+            gradient: LinearGradient(
+              colors: [
+                Color.fromARGB(132, 109, 109, 109),
+                Color.fromARGB(10, 0, 0, 0)
+              ],
+              begin: Alignment.centerLeft,
+              end: Alignment.centerRight,
+            ),
+          ),
           child: TextField(
             controller: _senhaNovamenteController,
             obscureText: true,
-            style: TextStyle(color: Colors.black87),
+            style: TextStyle(color: Colors.white),
             decoration: InputDecoration(
-                border: InputBorder.none,
-                contentPadding: EdgeInsets.only(left: 20),
-                hintText: '********',
-                hintStyle: TextStyle(color: Colors.black38)),
+              border: InputBorder.none,
+              contentPadding: EdgeInsets.only(left: 20),
+              hintText: '********',
+              hintStyle: TextStyle(color: Colors.white),
+            ),
           ),
-        )
+        ),
       ],
     );
   }
@@ -246,10 +306,10 @@ class _TelaCadastro1State extends State<TelaCadastro1> {
                         begin: Alignment.topCenter,
                         end: Alignment.bottomCenter,
                         colors: [
-                      Color(0x66544c46),
-                      Color(0x99544c46),
-                      Color(0xcc544c46),
-                      Color(0xff544c46),
+                      Color.fromARGB(255, 32, 32, 32),
+                      Color.fromARGB(255, 32, 32, 32),
+                      Color.fromARGB(255, 32, 32, 32),
+                      Color.fromARGB(255, 32, 32, 32),
                     ])),
                 child: SingleChildScrollView(
                   physics: AlwaysScrollableScrollPhysics(),

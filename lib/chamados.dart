@@ -344,10 +344,10 @@ class _TelaChamadosState extends State<TelaChamados> {
                         begin: Alignment.topCenter,
                         end: Alignment.bottomCenter,
                         colors: [
-                      Color(0x66544c46),
-                      Color(0x99544c46),
-                      Color(0xcc544c46),
-                      Color(0xff544c46),
+                      Color.fromARGB(255, 32, 32, 32),
+                      Color.fromARGB(255, 32, 32, 32),
+                      Color.fromARGB(255, 32, 32, 32),
+                      Color.fromARGB(255, 32, 32, 32),
                     ])),
                 child: SingleChildScrollView(
                   physics: AlwaysScrollableScrollPhysics(),

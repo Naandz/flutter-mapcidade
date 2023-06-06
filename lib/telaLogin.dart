@@ -29,34 +29,50 @@ class _TelaLoginState extends State<TelaLogin> {
         Text(
           'Email',
           style: TextStyle(
-              color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
+            color: Colors.white,
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+          ),
         ),
         SizedBox(height: 10),
         Container(
-          alignment: Alignment.centerLeft,
-          decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(10),
-              boxShadow: [
-                BoxShadow(
-                    color: Colors.black26, blurRadius: 6, offset: Offset(0, 2))
-              ]),
+          alignment: Alignment.center,
           height: 60,
-          child: TextField(
-            controller: _loginController,
-            keyboardType: TextInputType.emailAddress,
-            style: TextStyle(color: Colors.black87),
-            decoration: InputDecoration(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black26,
+                blurRadius: 1,
+                offset: Offset(0, 2),
+              ),
+            ],
+            gradient: LinearGradient(
+              colors: [
+                Color.fromARGB(132, 109, 109, 109),
+                Color.fromARGB(10, 0, 0, 0)
+              ],
+              begin: Alignment.centerLeft,
+              end: Alignment.centerRight,
+            ),
+          ),
+          child: Center(
+            child: TextField(
+              controller: _loginController,
+              keyboardType: TextInputType.emailAddress,
+              style: TextStyle(color: Colors.white),
+              decoration: InputDecoration(
                 border: InputBorder.none,
-                contentPadding: EdgeInsets.only(top: 14),
                 prefixIcon: Icon(
                   Icons.email,
-                  color: Color(0xff544c46),
+                  color: Color.fromARGB(255, 245, 245, 245),
                 ),
                 hintText: 'Email',
-                hintStyle: TextStyle(color: Colors.black38)),
+                hintStyle: TextStyle(color: Colors.white),
+              ),
+            ),
           ),
-        )
+        ),
       ],
     );
   }
@@ -68,34 +84,50 @@ class _TelaLoginState extends State<TelaLogin> {
         Text(
           'Senha',
           style: TextStyle(
-              color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
+            color: Colors.white,
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+          ),
         ),
         SizedBox(height: 10),
         Container(
-          alignment: Alignment.centerLeft,
-          decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(10),
-              boxShadow: [
-                BoxShadow(
-                    color: Colors.black26, blurRadius: 6, offset: Offset(0, 2))
-              ]),
+          alignment: Alignment.center,
           height: 60,
-          child: TextField(
-            controller: _passwordController,
-            obscureText: true,
-            style: TextStyle(color: Colors.black87),
-            decoration: InputDecoration(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black26,
+                blurRadius: 1,
+                offset: Offset(0, 2),
+              ),
+            ],
+            gradient: LinearGradient(
+              colors: [
+                Color.fromARGB(132, 109, 109, 109),
+                Color.fromARGB(10, 0, 0, 0)
+              ],
+              begin: Alignment.centerLeft,
+              end: Alignment.centerRight,
+            ),
+          ),
+          child: Center(
+            child: TextField(
+              controller: _passwordController,
+              obscureText: true,
+              style: TextStyle(color: Colors.white),
+              decoration: InputDecoration(
                 border: InputBorder.none,
-                contentPadding: EdgeInsets.only(top: 14),
                 prefixIcon: Icon(
                   Icons.lock,
-                  color: Color(0xff544c46),
+                  color: Colors.white,
                 ),
                 hintText: 'Senha',
-                hintStyle: TextStyle(color: Colors.black38)),
+                hintStyle: TextStyle(color: Colors.white),
+              ),
+            ),
           ),
-        )
+        ),
       ],
     );
   }
@@ -135,7 +167,7 @@ class _TelaLoginState extends State<TelaLogin> {
         width: double.infinity,
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
-            elevation: 5,
+            elevation: 3,
             padding: EdgeInsets.all(15),
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
@@ -200,7 +232,7 @@ class _TelaLoginState extends State<TelaLogin> {
         SharedPreferences preferences = await SharedPreferences.getInstance();
         await preferences.setString('email', login);
 
-        Navigator.of(context).pushNamed('/telaInicial');
+        Navigator.of(context).pushReplacementNamed('/telaInicial');
       } else {
         print('Erro durante a requisição: senha/email incorreta');
       }
@@ -227,10 +259,10 @@ class _TelaLoginState extends State<TelaLogin> {
                         begin: Alignment.topCenter,
                         end: Alignment.bottomCenter,
                         colors: [
-                      Color(0x66544c46),
-                      Color(0x99544c46),
-                      Color(0xcc544c46),
-                      Color(0xff544c46),
+                      Color.fromARGB(255, 32, 32, 32),
+                      Color.fromARGB(255, 32, 32, 32),
+                      Color.fromARGB(255, 32, 32, 32),
+                      Color.fromARGB(255, 32, 32, 32),
                     ])),
                 child: SingleChildScrollView(
                   physics: AlwaysScrollableScrollPhysics(),

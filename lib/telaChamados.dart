@@ -1,21 +1,31 @@
 import 'dart:convert';
-
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import './variaveis.dart';
 import 'package:http/http.dart' as http;
-
 import 'classes/chamados.dart';
 
 class ExecutarVerificar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Stack(children: [
-      Positioned(child: Barra_do_app()),
-      Positioned(child: TelaChamado1())
-    ]));
+      appBar: AppBar(
+        title: Text(
+          'MapCidade',
+          style: TextStyle(fontSize: 24),
+        ),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.search),
+            onPressed: () {
+              // Ação ao pressionar o ícone de pesquisa
+            },
+          ),
+        ],
+      ),
+      body: TelaChamado1(),
+    );
   }
 }
 
@@ -64,28 +74,49 @@ class _TelaChamado1State extends State<TelaChamado1> {
     final String status = item['status'];
     switch (status) {
       case 'analise':
-        return Chamado_Analise(
-          logradouro: item['logradouro'],
-          bairro: item['bairro'],
-          complemento: item['complemento'],
-          dataAtualizacao: item['dataAtualizacao'],
-          descricao: item['descricao'],
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            SizedBox(height: 15),
+            Chamado_Analise(
+              logradouro: item['logradouro'],
+              bairro: item['bairro'],
+              complemento: item['complemento'],
+              dataAtualizacao: item['dataAtualizacao'],
+              descricao: item['descricao'],
+            ),
+            SizedBox(height: 10),
+          ],
         );
       case 'atendido':
-        return Chamado_Atendido(
-          logradouro: item['logradouro'],
-          bairro: item['bairro'],
-          complemento: item['complemento'],
-          dataAtualizacao: item['dataAtualizacao'],
-          descricao: item['descricao'],
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            SizedBox(height: 15),
+            Chamado_Atendido(
+              logradouro: item['logradouro'],
+              bairro: item['bairro'],
+              complemento: item['complemento'],
+              dataAtualizacao: item['dataAtualizacao'],
+              descricao: item['descricao'],
+            ),
+            SizedBox(height: 10),
+          ],
         );
       case 'rejeitado':
-        return Chamado_Rejeitado(
-          logradouro: item['logradouro'],
-          bairro: item['bairro'],
-          complemento: item['complemento'],
-          dataAtualizacao: item['dataAtualizacao'],
-          descricao: item['descricao'],
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            SizedBox(height: 15),
+            Chamado_Rejeitado(
+              logradouro: item['logradouro'],
+              bairro: item['bairro'],
+              complemento: item['complemento'],
+              dataAtualizacao: item['dataAtualizacao'],
+              descricao: item['descricao'],
+            ),
+            SizedBox(height: 10),
+          ],
         );
       default:
         return Container(); // Return an empty container if the status is unknown or not provided
@@ -118,103 +149,78 @@ class Chamado_Analise extends StatelessWidget {
       required this.dataAtualizacao,
       required this.descricao});
 
+  //class Chamado_Analise extends StatelessWidget {
   @override
   Widget build(BuildContext buildContext) {
     return Center(
-        child: Stack(children: [
-      //ESPAÇAMENTO ENTRE AS CAIXAS
-      SizedBox(height: 20),
-      //CRIANDO QUADRADO AZUL
-      Container(
-          width: 350,
-          height: 150,
-          decoration: BoxDecoration(
+        child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        SizedBox(height: 20),
+        Stack(// Envolver o Container com um Stack
+            children: [
+          Container(
+            width: 350,
+            height: 150,
+            decoration: BoxDecoration(
               color: Color.fromARGB(255, 0, 4, 255),
-              borderRadius: BorderRadius.circular(20)),
-          //  STACK PARA EMPILHAR WIDGETS
-          child: Stack(children: [
-            Positioned(
-                top: 15,
-                left: 20,
-                //CIRCULO CINZA DE FOTOS
-                child: Container(
-                    width: 25,
-                    height: 25,
-                    decoration: BoxDecoration(
-                        color: Colors.grey,
-                        borderRadius: BorderRadius.circular(20)),
-                    child: Center(
-                      child: Text(
-                        '1',
-                        style: TextStyle(fontSize: 24, color: Colors.white),
-                      ),
-                    ))),
-            //FOTOS ENVIADAS DEBAIXO DA BOLA
-            Positioned(
-                top: 45,
-                left: 5,
-                right: 250,
-                child: Container(
-                    child: Text(
-                  'FOTO ENVIADA',
-                  style: TextStyle(
-                      fontSize: 16, color: Color.fromARGB(255, 255, 255, 255)),
-                ))),
-            //TEXTO DA LOCALIZAÇÃO DA RUA
-            Positioned(
-              top: 10,
-              left: 50,
-              right: 10,
-              child: Container(
-                //COLUNA DENTRO DO PRÓPRIO CONTAINER DO TEXTO PARA FAZER A LINHA (DIVIDER)
-                child: Column(
-                    //crossAxisAlignment para alinhar as classes dentro de uma coluna
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Text(logradouro,
-                       style: TextStyle(
-                                color: Colors.white,
-                            ),
-                          ),
-                      Text(bairro,
-                       style: TextStyle(
-                                color: Colors.white,
-                            ),
-                          ),
-                      Text(complemento,
-                       style: TextStyle(
-                                color: Colors.white,
-                            ),
-                          ),
-                      SizedBox(
-                        height: 15,
-                      ),
-                      //LINHA CINZA DEBAIXO DO TEXTO DA RUA
-                      Container(
-                        height: 2,
-                        color: Color.fromARGB(255, 186, 186, 186),
-                      ),
-                      SizedBox(
-                        height: 2,
-                      ),
-                      //DATA ABAIXO DA LINHA
-                      Column(
-                          crossAxisAlignment: CrossAxisAlignment.end,
-                          children: [
-                             Text(
-                              dataAtualizacao,
-                              style: TextStyle(
-                                color: Colors.white,
-                              ),
-                            ),
-                          ]),
-                    ]),
-              ),
+              borderRadius: BorderRadius.circular(20),
             ),
-            //ESPAÇAMENTO/POSICIONAMENTO DO CONTAINER AMARELO
-            Status_Analise(),
-          ]))
-    ]));
+          ),
+          Positioned(
+            top: 10,
+            left: 50,
+            right: 10,
+            child: Container(
+              child:
+                  Column(crossAxisAlignment: CrossAxisAlignment.end, children: [
+                Text(
+                  logradouro,
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
+                Text(
+                  bairro,
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
+                Text(
+                  complemento,
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
+                SizedBox(
+                  height: 15,
+                ),
+                //LINHA CINZA DEBAIXO DO TEXTO DA RUA
+                Container(
+                  height: 2,
+                  color: Color.fromARGB(255, 186, 186, 186),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                //DATA ABAIXO DA LINHA
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Status_Analise(),
+                    Text(
+                      dataAtualizacao,
+                      style: TextStyle(color: Colors.white, fontSize: 11),
+                    ),
+                  ],
+                ),
+              ]),
+            ),
+          ),
+          //ESPAÇAMENTO/POSICIONAMENTO DO CONTAINER AMARELO
+        ])
+      ],
+    ));
   }
 }
 
@@ -240,7 +246,7 @@ class Chamado_Rejeitado extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           //ESPAÇAMENTO ENTRE AS CAIXAS
-          SizedBox(height: 20),
+          SizedBox(height: 15),
           //CRIANDO QUADRADO AZUL
           Container(
             width: 350,
@@ -297,25 +303,29 @@ class Chamado_Rejeitado extends StatelessWidget {
                       //crossAxisAlignment para alinhar as classes dentro de uma coluna
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
-                        Text(logradouro,
-                       style: TextStyle(
-                                color: Colors.white,
-                            ),
+                        Text(
+                          logradouro,
+                          style: TextStyle(
+                            color: Colors.white,
                           ),
-                        Text(bairro,
-                       style: TextStyle(
-                                color: Colors.white,
-                            ),
+                        ),
+                        Text(
+                          bairro,
+                          style: TextStyle(
+                            color: Colors.white,
                           ),
-                       Text(complemento,
-                       style: TextStyle(
-                                color: Colors.white,
-                            ),
+                        ),
+                        Text(
+                          complemento,
+                          style: TextStyle(
+                            color: Colors.white,
                           ),
+                        ),
                         SizedBox(height: 15),
                         //LINHA CINZA DEBAIXO DO TEXTO DA RUA
                         Container(
                           height: 2,
+                          width: 25,
                           color: Color.fromARGB(255, 186, 186, 186),
                         ),
                         SizedBox(height: 2),
@@ -323,11 +333,13 @@ class Chamado_Rejeitado extends StatelessWidget {
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
-                            Text(dataAtualizacao,
-                       style: TextStyle(
+                            Text(
+                              dataAtualizacao,
+                              style: TextStyle(
                                 color: Colors.white,
+                              ),
                             ),
-                          ),
+                            Status_Rejeitado(),
                           ],
                         ),
                       ],
@@ -424,24 +436,28 @@ class Chamado_Atendido extends StatelessWidget {
                       //crossAxisAlignment para alinhar as classes dentro de uma coluna
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
-                        Text(logradouro,
-                       style: TextStyle(
-                                color: Colors.white,
-                            ),
+                        Text(
+                          logradouro,
+                          style: TextStyle(
+                            color: Colors.white,
                           ),
-                        Text(bairro,
-                       style: TextStyle(
-                                color: Colors.white,
-                            ),
+                        ),
+                        Text(
+                          bairro,
+                          style: TextStyle(
+                            color: Colors.white,
                           ),
-                        Text(complemento,
-                       style: TextStyle(
-                                color: Colors.white,
-                            ),
+                        ),
+                        Text(
+                          complemento,
+                          style: TextStyle(
+                            color: Colors.white,
                           ),
+                        ),
                         SizedBox(height: 15),
                         //LINHA CINZA DEBAIXO DO TEXTO DA RUA
                         Container(
+                          width: 100,
                           height: 2,
                           color: Color.fromARGB(255, 186, 186, 186),
                         ),
@@ -450,11 +466,12 @@ class Chamado_Atendido extends StatelessWidget {
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
-                            Text(dataAtualizacao,
-                       style: TextStyle(
+                            Text(
+                              dataAtualizacao,
+                              style: TextStyle(
                                 color: Colors.white,
+                              ),
                             ),
-                          ),
                           ],
                         ),
                       ],

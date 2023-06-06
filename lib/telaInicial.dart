@@ -9,13 +9,17 @@ import 'chamados.dart';
 import 'telaChamados.dart';
 
 class TelaInicial extends StatefulWidget {
-  const TelaInicial({super.key});
+  const TelaInicial({Key? key}) : super(key: key);
 
   @override
   _TelaInicialState createState() => _TelaInicialState();
 }
 
 class _TelaInicialState extends State<TelaInicial> {
+  Widget buildAppBar() {
+    return AppBar();
+  }
+
   Widget buildAbrirChamadoBtn() {
     return GestureDetector(
       child: Container(
@@ -23,7 +27,7 @@ class _TelaInicialState extends State<TelaInicial> {
         width: double.infinity,
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
-            elevation: 5,
+            elevation: 3,
             padding: EdgeInsets.all(15),
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
@@ -51,7 +55,7 @@ class _TelaInicialState extends State<TelaInicial> {
         width: double.infinity,
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
-            elevation: 5,
+            elevation: 3,
             padding: EdgeInsets.all(15),
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
@@ -79,7 +83,7 @@ class _TelaInicialState extends State<TelaInicial> {
         width: double.infinity,
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
-            elevation: 5,
+            elevation: 3,
             padding: EdgeInsets.all(15),
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
@@ -103,42 +107,40 @@ class _TelaInicialState extends State<TelaInicial> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: AnnotatedRegion<SystemUiOverlayStyle>(
-        value: SystemUiOverlayStyle.light,
-        child: GestureDetector(
-          child: Stack(
-            children: <Widget>[
-              Container(
-                height: double.infinity,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomCenter,
-                        colors: [
-                      Color(0x66544c46),
-                      Color(0x99544c46),
-                      Color(0xcc544c46),
-                      Color(0xff544c46),
-                    ])),
-                child: SingleChildScrollView(
-                  physics: AlwaysScrollableScrollPhysics(),
-                  padding: EdgeInsets.symmetric(horizontal: 25, vertical: 120),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      buildAbrirChamadoBtn(),
-                      SizedBox(height: 15),
-                      buildVerificaChamadoBtn(),
-                      SizedBox(height: 100),
-                      buildSairDaContaBtn(),
-                    ],
-                  ),
+      body: Column(
+        children: <Widget>[
+          Barra_do_app(),
+          Expanded(
+            child: Container(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                    Color.fromARGB(255, 32, 32, 32),
+                    Color.fromARGB(255, 32, 32, 32),
+                    Color.fromARGB(255, 32, 32, 32),
+                    Color.fromARGB(255, 32, 32, 32),
+                  ],
                 ),
-              )
-            ],
+              ),
+              child: SingleChildScrollView(
+                physics: AlwaysScrollableScrollPhysics(),
+                padding: EdgeInsets.symmetric(horizontal: 25, vertical: 120),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    buildAbrirChamadoBtn(),
+                    SizedBox(height: 15),
+                    buildVerificaChamadoBtn(),
+                    SizedBox(height: 100),
+                    buildSairDaContaBtn(),
+                  ],
+                ),
+              ),
+            ),
           ),
-        ),
+        ],
       ),
     );
   }

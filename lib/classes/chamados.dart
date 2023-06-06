@@ -7,14 +7,15 @@ class Chamados {
   String? status;
   String? dataAtualizacao;
 
-  Chamados(
-      {this.logradouro,
-      this.complemento,
-      this.bairro,
-      this.registro,
-      this.descricao,
-      this.status,
-      this.dataAtualizacao});
+  Chamados({
+    this.logradouro,
+    this.complemento,
+    this.bairro,
+    this.registro,
+    this.descricao,
+    this.status,
+    this.dataAtualizacao,
+  });
 
   Chamados.fromJson(Map<String, dynamic> json) {
     logradouro = json['logradouro'];
